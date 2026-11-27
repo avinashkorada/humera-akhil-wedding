@@ -11,7 +11,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}button,a{font:inherit}
 .music{position:fixed;right:14px;top:14px;z-index:30;border:1px solid #d9c39b;border-radius:24px;background:#fffaf2;color:var(--deep);padding:10px 14px;font-size:11px;letter-spacing:.06em;cursor:pointer;box-shadow:0 4px 16px #4b263018}
 .cover{min-height:100svh;display:grid;place-items:center;padding:28px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,#fffdfa 0,#f8e9eb 70%,#ead4d9 100%)}
-.frame{width:min(560px,100%);padding:54px 24px;text-align:center;border:1px solid #c9a4a6;outline:1px solid #c9a4a655;outline-offset:7px;background:#fffaf8e8;position:relative;z-index:2;box-shadow:0 18px 55px #6d39421a}
+.frame{width:min(560px,100%);padding:54px 24px;text-align:center;border:1px solid #c9a4a6;outline:1px solid #c9a4a655;outline-offset:7px;background:#fffaf8e8;position:relative;z-index:6;box-shadow:0 18px 55px #6d39421a}
 .eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
 .cover h1{font:400 clamp(58px,12vw,86px) 'Great Vibes',cursive;color:var(--deep);margin:24px 0 3px}.cover h2{font:400 16px 'Playfair Display',serif;letter-spacing:.17em;color:var(--ink);margin:0}
 .tag{font:italic 17px 'Playfair Display',serif;color:#947b7e;margin:22px 0}
@@ -32,20 +32,13 @@ p{font-size:14px;line-height:1.85}.muted{font-size:11px;color:#927e80;letter-spa
 .person .role{font-size:10px;letter-spacing:.22em;color:var(--gold)}.person h3{font:400 24px 'Playfair Display',serif;color:var(--deep);margin:12px 0}.person p{margin:4px 0;font-size:13px}
 .events{background:#fffaf8}.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:30px auto 0}.event{padding:24px 14px 26px;background:#fff;border:1px solid #dfcbbf;box-shadow:0 8px 24px #6e354b0a}
 .event h3{font:italic 24px 'Playfair Display',serif;color:var(--deep);margin:0 0 10px}.scratch-hint{font-size:11px;color:#90797c;margin:0 0 8px}
-.scratch{height:150px;position:relative;margin:0 auto 13px;max-width:290px;background:#fbf1ee;border:1px solid #8fa0b8;overflow:hidden;touch-action:none;border-radius:14px;box-shadow:0 8px 18px #273b5518}
-.scratch .under{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#172b4b;font:600 18px 'Playfair Display',serif;line-height:1.55;padding:10px;overflow:hidden}
-.scratch canvas{position:absolute;z-index:2;inset:0;display:block;width:100%;height:100%;touch-action:none;cursor:crosshair;background:linear-gradient(135deg,#8fa2bb,#e8edf4);}
-.scratch.revealed canvas{opacity:0;pointer-events:none}.scratch .under{overflow:hidden;justify-content:center;text-align:center}.scratch .under span{display:block}
+.scratch{height:92px;position:relative;margin:0 auto 13px;max-width:210px;background:#fbf1ee;border:1px dashed #cbb18a;overflow:hidden;touch-action:none;border-radius:3px}
+.scratch .under{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;color:var(--deep);font:italic 14px 'Playfair Display',serif;line-height:1.5;padding:4px}
+.scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .5s}.scratch.revealed canvas{opacity:0;pointer-events:none}
 .event p{font-size:12px;margin:6px 0}.event .venue-name{margin-top:13px;color:#76676a}.map{display:inline-block;margin-top:10px;text-decoration:none;color:var(--deep);font-size:10px;letter-spacing:.08em;border-bottom:1px solid var(--gold);padding-bottom:3px}
 .end{background:#f4e8e5;padding:67px 20px}.end h2{font:400 56px 'Great Vibes',cursive;color:var(--deep);margin:12px 0}.end .thanks{font:400 29px 'Playfair Display',serif;color:var(--deep)}
 .fade{opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}.fade.visible{opacity:1;transform:none}
-
-.countdown-section{background:#f4e8e5}
-.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:560px;margin:28px auto}
-.countdown-grid div{padding:18px 8px;background:#fffaf8;border:1px solid #d9c3b5}
-.countdown-grid strong{display:block;font:400 clamp(25px,6vw,38px) 'Playfair Display',serif;color:var(--deep)}
-.countdown-grid span{display:block;margin-top:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#927e80}
-@media(max-width:650px){section{padding:60px 16px}.people,.event-grid{grid-template-columns:1fr}.event{max-width:430px;width:100%;margin:auto}.scratch{height:150px;max-width:300px}.frame{padding:46px 18px}}
+@media(max-width:650px){section{padding:60px 16px}.people,.event-grid{grid-template-columns:1fr}.event{max-width:380px;width:100%;margin:auto}.frame{padding:46px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}.curtain:before,.curtain:after{transition:none}}
 </style>
 </head>
@@ -64,63 +57,27 @@ p{font-size:14px;line-height:1.85}.muted{font-size:11px;color:#927e80;letter-spa
 <div class="family-line"><div class="label">Grandparents</div><h3>Late Mrs. &amp; Mr. G. Salar Khan</h3><p>Retired Teacher</p></div><div class="ornament">✧</div>
 <div class="family-line"><div class="label">Parents</div><h3>Mrs. &amp; Mr. G. Md. Hanif Khan</h3><p>Administrative Officer, DWMA, Nandyal</p></div><p class="muted" style="margin-top:28px">WITH THE LOVE AND BLESSINGS OF OUR FAMILIES</p></div></section>
 <section class="families fade"><div class="wrap"><div class="ornament">✧</div><h2 class="section-title">The Families</h2><div class="people">
-<article class="person"><div class="role">GROOM</div><h3>M. Mohammed Akhil</h3><p>Son of</p><p><strong>Mrs. &amp; Mr. Masuldar Sultan</strong></p><p>Wood Business</p></article>
-<article class="person"><div class="role">BRIDE</div><h3>G. Humera Thasleem</h3><p>Daughter of</p><p><strong>Mrs. &amp; Mr. G. Md. Hanif Khan</strong></p></article>
+<article class="person"><div class="role">GROOM</div><h3>M. Mohammed Akhil</h3><p>Senior Cloud Ops Engineer</p><p>Pegasystems, Bangalore</p><p>Son of</p><p><strong>Mrs. &amp; Mr. Masuldar Sultan</strong></p><p>Wood Business</p></article>
+<article class="person"><div class="role">BRIDE</div><h3>G. Humera Thasleem</h3><p>Software Engineer</p><p>IBM, Bangalore</p><p>Daughter of</p><p><strong>Mrs. &amp; Mr. G. Md. Hanif Khan</strong></p></article>
 </div></div></section>
 <section class="events fade"><div class="wrap"><div class="eyebrow">Save these beautiful moments</div><h2 class="section-title">Wedding Celebrations</h2><p class="muted">Scratch the cards to reveal the dates</p><div class="event-grid">
-<article class="event"><h3>Shukrana</h3><p class="scratch-hint">Scratch to reveal the date ✧</p><div class="scratch"><div class="under"><span>Saturday</span><span>26 December 2026</span><span>8:00 PM</span></div><canvas aria-label="Scratch to reveal Shukrana date"></canvas></div></article>
-<article class="event"><h3>Nikah</h3><p class="scratch-hint">Scratch to reveal the date ✧</p><div class="scratch"><div class="under"><span>Sunday</span><span>27 December 2026</span><span>11:30 AM onwards</span></div><canvas aria-label="Scratch to reveal Nikah date"></canvas></div></article>
-<article class="event"><h3>Valima</h3><p class="scratch-hint">Scratch to reveal the date ✧</p><div class="scratch"><div class="under"><span>Monday</span><span>28 December 2026</span><span>8:00 PM</span></div><canvas aria-label="Scratch to reveal Valima date"></canvas></div></article>
+<article class="event"><h3>Shukrana</h3><p class="scratch-hint">Scratch here ✧</p><div class="scratch"><div class="under"><span>Saturday</span><span>26 December 2026</span><span>8:00 PM</span></div><canvas aria-label="Scratch to reveal Shukrana date"></canvas></div><p class="venue-name">Yatham Jaya Chandra Reddy Gardens, Nandyal</p></article>
+<article class="event"><h3>Nikah</h3><p class="scratch-hint">Scratch here ✧</p><div class="scratch"><div class="under"><span>Sunday · 17th Rajjab-ul-Murajjab 1448 H.</span><span>27 December 2026</span><span>11:30 AM onwards</span><span>Lunch follows</span></div><canvas aria-label="Scratch to reveal Nikah date"></canvas></div><p class="venue-name">Yatham Jaya Chandra Reddy Gardens, Nandyal</p></article>
+<article class="event"><h3>Valima</h3><p class="scratch-hint">Scratch here ✧</p><div class="scratch"><div class="under"><span>Monday</span><span>28 December 2026</span><span>Lunch 1:00 PM</span><span>Valima 8:00 PM</span></div><canvas aria-label="Scratch to reveal Valima date"></canvas></div><p class="venue-name">Yatham Jaya Chandra Reddy Gardens, Nandyal</p></article>
 </div><p style="margin-top:35px">We look forward to celebrating with you.</p></div></section>
 <section class="together fade"><div class="wrap"><div class="eyebrow">Join us for our celebrations</div><h2 class="section-title">Wedding Venues</h2>
-<div class="people" style="grid-template-columns:1fr;max-width:650px">
-<article class="person"><div class="role">ALL THREE CELEBRATIONS</div><h3>Yatham Jaya Chandra Reddy Gardens</h3><p>Near Rythu Nagaram, Koilakuntla Road, Nandyal, Andhra Pradesh</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yatham+Jaya+Chandra+Reddy+Gardens+Near+Rythu+Nagaram+Nandyal">View Location 📍</a></article>
+<div class="people">
+<article class="person"><div class="role">SHUKRANA</div><h3>Yatham Jaya Chandra Reddy Gardens</h3><p>Near Rythu Nagaram, Koilakuntla Road, Nandyal, Andhra Pradesh</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yatham+Jaya+Chandra+Reddy+Gardens+Near+Rythu+Nagaram+Nandyal">View Location 📍</a></article>
+<article class="person"><div class="role">NIKAH</div><h3>Yatham Jaya Chandra Reddy Gardens</h3><p>Near Rythu Nagaram, Koilakuntla Road, Nandyal, Andhra Pradesh</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yatham+Jaya+Chandra+Reddy+Gardens+Near+Rythu+Nagaram+Nandyal">View Location 📍</a></article>
+<article class="person"><div class="role">VALIMA</div><h3>Yatham Jaya Chandra Reddy Gardens</h3><p>Near Rythu Nagaram, Koilakuntla Road, Nandyal, Andhra Pradesh</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Yatham+Jaya+Chandra+Reddy+Gardens+Near+Rythu+Nagaram+Nandyal">View Location 📍</a></article>
 </div><p style="margin-top:30px">We await your presence!</p><p class="muted">With love and duas from our families.</p></div></section>
-<section class="countdown-section fade" id="countdown"><div class="wrap">
-<div class="eyebrow">The countdown begins</div><h2 class="section-title">Counting Down to Our Nikah</h2>
-<div class="countdown-grid"><div><strong id="days">--</strong><span>Days</span></div><div><strong id="hours">--</strong><span>Hours</span></div><div><strong id="minutes">--</strong><span>Minutes</span></div><div><strong id="seconds">--</strong><span>Seconds</span></div></div>
-<p class="muted">27 December 2026 · 11:30 AM</p></div></section>
 <footer class="end"><div class="eyebrow">With gratitude to Allah</div><h2>A Beautiful Beginning</h2><div class="ornament">✧ ❀ ✧</div><div class="thanks">Thank You</div><p>With love and duas from our families.</p><div class="ornament">✧ ❀ ✧</div></footer>
 </main>
 <script>
 const cover=document.getElementById('cover'),content=document.getElementById('content');
-document.getElementById('open').addEventListener('click',()=>{if(cover.classList.contains('opened'))return;cover.classList.add('opened');startMusicFromInvitationTap();setTimeout(()=>{content.classList.add('show');content.scrollIntoView({behavior:'smooth'});},1450);});
+document.getElementById('open').addEventListener('click',()=>{if(cover.classList.contains('opened'))return;cover.classList.add('opened');setTimeout(()=>{content.classList.add('show');content.scrollIntoView({behavior:'smooth'});},1450);});
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.fade').forEach(e=>observer.observe(e));
-document.querySelectorAll('.scratch canvas').forEach(canvas=>{
- const ctx=canvas.getContext('2d');let drawing=false,strokes=0,ready=false;
- function setup(){
-   const r=canvas.parentElement.getBoundingClientRect(),d=Math.max(1,window.devicePixelRatio||1);
-   if(!r.width||!r.height){requestAnimationFrame(setup);return}
-   canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);
-   canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';
-   ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';
-   const g=ctx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#8fa2bb');g.addColorStop(1,'#e8edf4');
-   ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);
-   ctx.fillStyle='#172b4b';ctx.textAlign='center';ctx.textBaseline='middle';
-   ctx.font='600 18px "Playfair Display",serif';ctx.fillText('Scratch here ✧',r.width/2,r.height/2);
-   ready=true;
- }
- requestAnimationFrame(setup);
- function erase(e){
-   if(!drawing||!ready)return;
-   const r=canvas.getBoundingClientRect(),d=Math.max(1,window.devicePixelRatio||1);
-   ctx.globalCompositeOperation='destination-out';ctx.beginPath();
-   ctx.arc((e.clientX-r.left), (e.clientY-r.top), 23,0,Math.PI*2);ctx.fill();
-   strokes++;
-   if(strokes>=18){canvas.parentElement.classList.add('revealed');}
- }
- canvas.addEventListener('pointerdown',e=>{if(!ready)return;drawing=true;canvas.setPointerCapture(e.pointerId);erase(e)});
- canvas.addEventListener('pointermove',erase);
- ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>canvas.addEventListener(ev,()=>drawing=false));
-});
-
-const targetNikah = new Date('2026-12-27T11:30:00+05:30').getTime();
-function updateCountdown(){const diff=Math.max(0,targetNikah-Date.now());const vals={days:Math.floor(diff/86400000),hours:Math.floor(diff%86400000/3600000),minutes:Math.floor(diff%3600000/60000),seconds:Math.floor(diff%60000/1000)};Object.entries(vals).forEach(([k,v])=>{const el=document.getElementById(k);if(el)el.textContent=String(v).padStart(2,'0');});}
-updateCountdown();setInterval(updateCountdown,1000);
+document.querySelectorAll('.scratch canvas').forEach(canvas=>{const ctx=canvas.getContext('2d');let drawing=false,erased=0;function setup(){const r=canvas.getBoundingClientRect(),d=window.devicePixelRatio||1;canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#d9c8bd';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#80686a';ctx.font='11px DM Sans';ctx.textAlign='center';ctx.fillText('SCRATCH TO REVEAL',r.width/2,r.height/2+4);erased=0}setup();function erase(e){if(!drawing)return;const r=canvas.getBoundingClientRect();ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(e.clientX-r.left,e.clientY-r.top,19,0,Math.PI*2);ctx.fill();erased++;if(erased>24){canvas.parentElement.classList.add('revealed')}}canvas.addEventListener('pointerdown',e=>{drawing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',erase);canvas.addEventListener('pointerup',()=>drawing=false);canvas.addEventListener('pointercancel',()=>drawing=false)});
 const audio=document.getElementById('weddingAudio'),music=document.getElementById('music');let playing=false;
-async function startMusicFromInvitationTap(){
- try{await audio.play();playing=true;music.textContent='♫ Pause Music';}
- catch(e){playing=false;music.textContent='♫ Play Music';}
-}
-music.addEventListener('click',async()=>{if(!playing){try{await audio.play();playing=true;music.textContent='♫ Pause Music'}catch(e){alert('Please check that wedding-song.mp3 is uploaded in the repository root with this exact filename.')}}else{audio.pause();playing=false;music.textContent='♫ Play Music'}});
+music.addEventListener('click',async()=>{if(!playing){try{await audio.play();playing=true;music.textContent='♫ Pause Music'}catch(e){alert('Upload your MP3 in the repository root with the exact name wedding-song.mp3.')}}else{audio.pause();playing=false;music.textContent='♫ Play Music'}});
 </script></body></html>
