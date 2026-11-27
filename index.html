@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#203858">
 <title>Humera & Akhil | Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Ruthie&display=swap" rel="stylesheet">
 <style>
 :root{--rose:#7189aa;--deep:#203858;--gold:#b6a16f;--ink:#34445a;--paper:#f8fbff;--blush:#e8eef7}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300}button,a{font:inherit}
@@ -13,7 +13,7 @@
 .cover{min-height:100svh;display:grid;place-items:center;padding:28px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,#203858 0,#142944 72%,#0d1d33 100%)}
 .frame{width:min(560px,100%);padding:54px 24px;text-align:center;border:2px solid #b9a16e;outline:1px solid #d8c79d;outline-offset:8px;background:linear-gradient(135deg,#ffffff 0%,#f7f9fd 100%);position:relative;z-index:7;box-shadow:0 18px 55px #06162b66,inset 0 0 0 7px #ffffff,inset 0 0 0 9px #c4b17e;transition:opacity .45s ease,transform .65s ease}
 .eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.frame:before{content:'✧  ❦  ✧';display:block;color:#b49b65;font-size:19px;letter-spacing:.45em;margin:0 auto 18px}.frame:after{content:'✧  ❦  ✧';display:block;color:#b49b65;font-size:19px;letter-spacing:.45em;margin:22px auto 0}.cover h1{font:400 clamp(58px,12vw,86px) 'Pinyon Script',cursive;font-style:normal;color:var(--deep);margin:24px 0 3px;letter-spacing:.015em}.cover h2{font:400 16px 'Cormorant Garamond',serif;letter-spacing:.17em;color:var(--ink);margin:0}
+.frame:before{content:'✧  ❦  ✧';display:block;color:#b49b65;font-size:19px;letter-spacing:.45em;margin:0 auto 18px}.frame:after{content:'✧  ❦  ✧';display:block;color:#b49b65;font-size:19px;letter-spacing:.45em;margin:22px auto 0}.cover h1.cover-names{font-family:'Ruthie',cursive;font-style:normal;font-weight:400;color:var(--deep);font-size:clamp(58px,13vw,84px);line-height:1.02;letter-spacing:0;margin:26px 0 18px;display:flex;flex-direction:column;align-items:center;gap:2px}.cover h1.cover-names span{display:block}.cover h1.cover-names .cover-amp{font-size:.58em;line-height:1;margin:0}.cover h2{font:400 16px 'Cormorant Garamond',serif;letter-spacing:.17em;color:var(--ink);margin:0}
 .tag{font:italic 17px 'Cormorant Garamond',serif;color:#647b99;margin:22px 0}
 .open{position:relative;z-index:8;border:1px solid var(--gold);background:transparent;color:var(--deep);padding:13px 23px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
 .curtain{position:absolute;inset:0;z-index:5;display:flex;pointer-events:none}
@@ -48,7 +48,7 @@ p{font-size:14px;line-height:1.85}.muted{font-size:11px;color:#718198;letter-spa
 .countdown-grid div{padding:18px 8px;background:#ffffff;border:1px solid #b9c7da}
 .countdown-grid strong{display:block;font:400 clamp(25px,6vw,38px) 'Cormorant Garamond',serif;color:var(--deep)}
 .countdown-grid span{display:block;margin-top:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#718198}
-@media(max-width:650px){section{padding:52px 14px;margin:7px 5px;border-width:4px}section:before,section:after{font-size:14px;margin-bottom:13px}.end{margin:7px 5px;border-width:4px;padding:58px 16px}.people,.event-grid{grid-template-columns:1fr}.event{max-width:430px;width:100%;margin:auto}.scratch{height:150px;max-width:300px}.frame{padding:46px 18px}}
+@media(max-width:650px){.cover h1.cover-names{font-size:clamp(58px,15vw,78px);gap:0;margin:22px 0 16px}.cover h1.cover-names .cover-amp{font-size:.58em}section{padding:52px 14px;margin:7px 5px;border-width:4px}section:before,section:after{font-size:14px;margin-bottom:13px}.end{margin:7px 5px;border-width:4px;padding:58px 16px}.people,.event-grid{grid-template-columns:1fr}.event{max-width:430px;width:100%;margin:auto}.scratch{height:150px;max-width:300px}.frame{padding:46px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}.curtain:before,.curtain:after{transition:none}}
 </style>
 </head>
@@ -56,7 +56,7 @@ p{font-size:14px;line-height:1.85}.muted{font-size:11px;color:#718198;letter-spa
 <button class="music" id="music">♫ Play Music</button>
 <audio id="weddingAudio" src="wedding-song.mp3" preload="none" loop playsinline></audio>
 <header class="cover" id="cover"><div class="frame">
-<div class="eyebrow">With the blessings of Allah</div><h1>Humera &amp; Akhil</h1><h2>Wedding Invitation</h2>
+<div class="eyebrow">With the blessings of Allah</div><h1 class="cover-names"><span>Humera</span><span class="cover-amp">&amp;</span><span>Akhil</span></h1><h2>Wedding Invitation</h2>
 <div class="tag">A beautiful beginning</div><button class="open" id="open">Touch to open the invitation</button>
 </div><div class="curtain"><div class="curtain-knot"></div></div></header>
 <main id="content">
